@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <time.h>
-#include "sortingFunctions.h"
+#include "sortFunctions.h"
 
 typedef struct SORTDATA sortData;
 
@@ -22,6 +22,6 @@ sortData selectionSort(int *array, int n){
 		metrics.moves++;
 	}
 	end = clock();
-	metrics.execTime = difftime(end, start);
+	metrics.execTime = microSecondsExecDiff(end, start);
 	return metrics;
 }

@@ -1,11 +1,10 @@
 #include <stdlib.h>
-#include <stdbool.h>
 #include <time.h>
-#include "sortingFunctions.h"
+#include "sortFunctions.h"
 
 typedef struct SORTDATA sortData;
 
-insertionSort(int *array, int n){
+sortData insertionSort(int *array, int n){
 	time_t start, end;
 	sortData metrics = {0, 0, 0};
 	int ordem[n];
@@ -24,6 +23,6 @@ insertionSort(int *array, int n){
 		metrics.moves++;
 	}
 	end = clock();
-	metrics.execTime = difftime(end, start);
+	metrics.execTime = microSecondsExecDiff(end, start);
 	return metrics;
 }
