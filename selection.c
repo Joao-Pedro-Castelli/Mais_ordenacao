@@ -5,7 +5,7 @@
 typedef struct SORTDATA sortData;
 
 sortData selectionSort(int *array, int n){
-	time_t start, end;
+	clock_t start, end;
 	int ordem[n];
 	arrCopiar(ordem, array, n);
 	sortData metrics = {0, 0, 0};

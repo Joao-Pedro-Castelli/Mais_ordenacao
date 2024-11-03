@@ -5,7 +5,7 @@
 typedef struct SORTDATA sortData;
 
 sortData bubbleSort(int *array, int n){
-	time_t start, end;
+	clock_t start, end;
 	sortData metrics = {0, 0, 0};
 	int ordem[n];
 	arrCopiar(ordem, array, n);
