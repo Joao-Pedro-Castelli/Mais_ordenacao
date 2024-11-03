@@ -1,15 +1,16 @@
-all: aux sortFuncs
-	gcc -o main funcAux.o bubble.o insertion.o selection.o main.c -Wall -std=c99
+OBJ_CODE := $(wildcard ./sortFiles/*.c)
+OBJ_FILES := $(patsubst %.c,%.o,$(OBJ_CODE))
+
+all: sortFuncs $(OBJ_FILES)
+	gcc -o main $(OBJ_FILES) main.c -Wall -std=c99
 
 run:
 	./main metrics.txt
 
-sortFuncs:
-	gcc -c bubble.c insertion.c selection.c -Wall -std=c99
-
-aux:
-	gcc -c funcAux.c -Wall -std=c99
+sortFuncs: $(OBJ_CODE)
+	gcc -c $(OBJ_CODE) -Wall -std=c99
+	mv -t ./sortFiles *.o
 
 clean:
-	rm *.o main
+	rm $(OBJ_FILES) main
 

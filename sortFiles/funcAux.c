@@ -1,6 +1,6 @@
 #include "sortFunctions.h"
 
-bool trocarTem(int *ordem, int a, int b){
+bool trocarTem(unsigned int *ordem, int a, int b){
 	if(a > b){
 		int temp = a;
 		a = b;
@@ -12,14 +12,14 @@ bool trocarTem(int *ordem, int a, int b){
 	return false;
 }
 
-void ordemTrocar(int *ordem, int a, int b){
-	int temp = ordem[a];
+void ordemTrocar(unsigned int *ordem, int a, int b){
+	unsigned int temp = ordem[a];
 	ordem[a] = ordem[b];
 	ordem[b] = temp;
 	return;
 }
 
-void arrCopiar(int *ordem, int *array, int n){
+void arrCopiar(unsigned int *ordem, unsigned int *array, int n){
 	for(int i = 0; i < n; i++){
 		ordem[i] = array[i];
 	}

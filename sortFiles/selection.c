@@ -1,12 +1,10 @@
-#include <stdlib.h>
-#include <time.h>
 #include "sortFunctions.h"
 
 typedef struct SORTDATA sortData;
 
-sortData selectionSort(int *array, int n){
+sortData selectionSort(unsigned int *array, int n){
 	clock_t start, end;
-	int ordem[n];
+	unsigned int ordem[n];
 	arrCopiar(ordem, array, n);
 	sortData metrics = {0, 0, 0};
 	start = clock();

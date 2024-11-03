@@ -1,13 +1,11 @@
-#include <stdlib.h>
-#include <time.h>
 #include "sortFunctions.h"
 
 typedef struct SORTDATA sortData;
 
-sortData bubbleSort(int *array, int n){
+sortData bubbleSort(unsigned int *array, int n){
 	clock_t start, end;
 	sortData metrics = {0, 0, 0};
-	int ordem[n];
+	unsigned int ordem[n];
 	arrCopiar(ordem, array, n);
 	start = clock();
 	int moves;
