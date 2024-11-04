@@ -29,3 +29,11 @@ void arrCopiar(unsigned int *ordem, unsigned int *array, int n){
 double microSecondsExecDiff(clock_t end, clock_t begin){
 	return (end - begin) * 1000000 / CLOCKS_PER_SEC;
 }
+
+struct SORTDATA sortdataSum(struct SORTDATA metrics, struct SORTDATA tmp){
+	struct SORTDATA result;
+	result.comparisons = metrics.comparisons + tmp.comparisons;
+	result.moves = metrics.moves + tmp.moves;
+	result.execTime = metrics.execTime + tmp.execTime;
+	return result;
+}

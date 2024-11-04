@@ -17,8 +17,8 @@ int main(int argc, char *argv[]){
 	}
 	FILE *fp = fopen(argv[1], "w");
 	//array of pointers to functions, the functions are defined in the header
-	sortData (*sortingFunctions[])(unsigned int *, int) = {&bubbleSort, &selectionSort, &insertionSort, &shellSort}; //, &quickSort, &heapSort, &mergeSort, &lesserSort, &radixSort};
-	char *functionNames[] = {"Bubble sort", "Selection sort", "Insertion sort"}; //, "Shell sort", "Quick sort", "Heap sort", "Merge sort", "Lesser sort", "Radix sort"};
+	sortData (*sortingFunctions[])(unsigned int *, int) = {&bubbleSort, &selectionSort, &insertionSort, &shellSort, &quickSort};//, &heapSort, &mergeSort, &lesserSort, &radixSort};
+	char *functionNames[] = {"Bubble sort", "Selection sort", "Insertion sort", "Shell sort", "Quick sort"};//, "Heap sort", "Merge sort", "Lesser sort", "Radix sort"};
 	//array to string of the files that contain the number to be sorted
 	char *fileNames[] = {"random0.txt", "random1.txt", "random2.txt", "random3.txt", "random4.txt", "ordenado.txt", "inordenado.txt"};
 	//array to be sorted
@@ -27,7 +27,7 @@ int main(int argc, char *argv[]){
 	sortData metrics = {0, 0, 0};
 	//pointer to function, will be used to iterate over the function pointers on the array
 	sortData (*sortFunc)(unsigned int *, int);
-	for(int i = 0; i < 4; i++){
+	for(int i = 0; i < 5; i++){
 		sortFunc = sortingFunctions[i];
 		fprintf(fp, "\n\n\nFunction %s:\n", functionNames[i]);
 		for(int j = 0; j < 7; j++){
