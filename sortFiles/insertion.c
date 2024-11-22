@@ -11,17 +11,14 @@ sortData insertionSort(unsigned int *array, int n){
 	for(int i = 1; i < n; i++){
 		int j;
 		unsigned temp = ordem[i];
-		for(j = i; j > 0 && trocarTem(ordem, i, j - 1); j--){
+		for(j = i - 1; j >= 0 && ordem[j] > temp; j--){
 			metrics.comparisons++;
-			ordem[j] = ordem[j - 1];
+			ordem[j + 1] = ordem[j];
 			metrics.moves++;
 		}
 		metrics.comparisons++;
-		if(ordem[j] != temp){
-			ordem[j] = temp;
-			metrics.moves++;
-		}
-		metrics.comparisons++;
+		ordem[j + 1] = temp;
+		metrics.moves++;
 	}
 	end = clock();
 	metrics.execTime = microSecondsExecDiff(end, start);
