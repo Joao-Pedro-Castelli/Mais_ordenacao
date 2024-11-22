@@ -15,8 +15,8 @@ struct SORTDATA selectionSort(unsigned int *array, int n);
 struct SORTDATA insertionSort(unsigned int *array, int n);
 struct SORTDATA shellSort(unsigned int *array, int n);
 struct SORTDATA quickSort(unsigned int *array, int n);
-/*
 struct SORTDATA heapSort(unsigned int *array, int n);
+/*
 struct SORTDATA mergeSort(unsigned int *array, int n);
 struct SORTDATA lesserSort(unsigned int *array, int n);
 struct SORTDATA radixSort(unsigned int *array, int n);
