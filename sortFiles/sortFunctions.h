@@ -17,10 +17,8 @@ struct SORTDATA shellSort(unsigned int *array, int n);
 struct SORTDATA quickSort(unsigned int *array, int n);
 struct SORTDATA heapSort(unsigned int *array, int n);
 struct SORTDATA mergeSort(unsigned int *array, int n);
-/*
 struct SORTDATA lesserSort(unsigned int *array, int n);
 struct SORTDATA radixSort(unsigned int *array, int n);
-*/
 bool trocarTem(unsigned int *ordem, int a, int b);
 void ordemTrocar(unsigned int *ordem, int a, int b);
 void arrCopiar(unsigned int *ordem, unsigned int *array, int n);
